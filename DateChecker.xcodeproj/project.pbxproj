@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		2128727E26F3C4D100B95229 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128727D26F3C4D100B95229 /* AppDelegate.swift */; };
 		2128728026F3C4D100B95229 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128727F26F3C4D100B95229 /* SceneDelegate.swift */; };
-		2128728226F3C4D100B95229 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128728126F3C4D100B95229 /* ViewController.swift */; };
+		2128728226F3C4D100B95229 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128728126F3C4D100B95229 /* MainViewController.swift */; };
 		2128728526F3C4D100B95229 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2128728326F3C4D100B95229 /* Main.storyboard */; };
 		2128728726F3C4D500B95229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2128728626F3C4D500B95229 /* Assets.xcassets */; };
 		2128728A26F3C4D500B95229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2128728826F3C4D500B95229 /* LaunchScreen.storyboard */; };
+		2128729626F3C60A00B95229 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128729526F3C60A00B95229 /* NetworkConfiguration.swift */; };
+		2128729826F3C61A00B95229 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128729726F3C61A00B95229 /* NetworkService.swift */; };
+		2128729A26F3C6E300B95229 /* BeerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128729926F3C6E300B95229 /* BeerData.swift */; };
+		2128729C26F3CB8E00B95229 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128729B26F3CB8E00B95229 /* CalendarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2128727A26F3C4D100B95229 /* DateChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DateChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2128727D26F3C4D100B95229 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2128727F26F3C4D100B95229 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2128728126F3C4D100B95229 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2128728126F3C4D100B95229 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2128728426F3C4D100B95229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2128728626F3C4D500B95229 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2128728926F3C4D500B95229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2128728B26F3C4D500B95229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2128729526F3C60A00B95229 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkConfiguration.swift; path = ../../../NetworkConfiguration.swift; sourceTree = "<group>"; };
+		2128729726F3C61A00B95229 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		2128729926F3C6E300B95229 /* BeerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerData.swift; sourceTree = "<group>"; };
+		2128729B26F3CB8E00B95229 /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,43 @@
 		2128727C26F3C4D100B95229 /* DateChecker */ = {
 			isa = PBXGroup;
 			children = (
-				2128727D26F3C4D100B95229 /* AppDelegate.swift */,
-				2128727F26F3C4D100B95229 /* SceneDelegate.swift */,
-				2128728126F3C4D100B95229 /* ViewController.swift */,
+				2128729426F3C5F800B95229 /* Model */,
+				2128729326F3C5EE00B95229 /* Network */,
+				2128729126F3C5BC00B95229 /* SupportFiles */,
+				2128728126F3C4D100B95229 /* MainViewController.swift */,
 				2128728326F3C4D100B95229 /* Main.storyboard */,
 				2128728626F3C4D500B95229 /* Assets.xcassets */,
-				2128728826F3C4D500B95229 /* LaunchScreen.storyboard */,
 				2128728B26F3C4D500B95229 /* Info.plist */,
 			);
 			path = DateChecker;
+			sourceTree = "<group>";
+		};
+		2128729126F3C5BC00B95229 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2128727D26F3C4D100B95229 /* AppDelegate.swift */,
+				2128727F26F3C4D100B95229 /* SceneDelegate.swift */,
+				2128728826F3C4D500B95229 /* LaunchScreen.storyboard */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		2128729326F3C5EE00B95229 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2128729526F3C60A00B95229 /* NetworkConfiguration.swift */,
+				2128729726F3C61A00B95229 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2128729426F3C5F800B95229 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2128729926F3C6E300B95229 /* BeerData.swift */,
+				2128729B26F3CB8E00B95229 /* CalendarModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2128728226F3C4D100B95229 /* ViewController.swift in Sources */,
+				2128729C26F3CB8E00B95229 /* CalendarModel.swift in Sources */,
+				2128729826F3C61A00B95229 /* NetworkService.swift in Sources */,
+				2128729A26F3C6E300B95229 /* BeerData.swift in Sources */,
+				2128728226F3C4D100B95229 /* MainViewController.swift in Sources */,
 				2128727E26F3C4D100B95229 /* AppDelegate.swift in Sources */,
 				2128728026F3C4D100B95229 /* SceneDelegate.swift in Sources */,
+				2128729626F3C60A00B95229 /* NetworkConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
