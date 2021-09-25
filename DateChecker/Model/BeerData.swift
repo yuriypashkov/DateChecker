@@ -26,6 +26,8 @@ struct BeerData: Codable {
     var beerSpecialInfoTitle: String?
     var beerSpecialInfo: String?
     
+    
+    
 }
 
 
