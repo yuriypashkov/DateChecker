@@ -12,12 +12,12 @@ class MainViewController: UIViewController {
     let activityIndicator = UIActivityIndicatorView()
     var calendarModel: CalendarModel?
     var arrayOfMonths: [(String, [DayAndBeer])] = []
-    private let itemsPerRow: CGFloat = 8
+    private let itemsPerRow: CGFloat = 7
     private let sectionInsets = UIEdgeInsets(
       top: 5.0,
-      left: 2.0,
+      left: 5.0,
       bottom: 5.0,
-      right: 2.0)
+      right: 5.0)
 
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -27,7 +27,9 @@ class MainViewController: UIViewController {
         
         prepare()
         
-        getBeerData()
+        getBeersAndBreweriesData()
+        
+        
     }
     
     private func prepare() {
@@ -37,28 +39,55 @@ class MainViewController: UIViewController {
         view.addSubview(activityIndicator)
     }
     
-    private func getBeerData() {
+    private func getBeersAndBreweriesData() {
         activityIndicator.startAnimating()
+        
+        var beers = [BeerData]()
+        var breweries = [BreweryData]()
+        
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
         
         NetworkService.shared.requestBeerData { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let beerArray):
-                    
-                    // create calendar model
-                    self.calendarModel = CalendarModel(beerData: beerArray)
-                    // set collection view with data
-                    self.getBeersOnMonth()
-                    
-                    self.activityIndicator.stopAnimating()
-                    print("Data loaded from: \(NetworkConfiguration.apiUrl)")
+                    beers = beerArray
                 case .failure(let error):
                     print(error)
-                    self.activityIndicator.stopAnimating()
+                    print("Problem with loading beers")
                 }
-                
+                dispatchGroup.leave()
             }
 
+        }
+        
+        dispatchGroup.enter()
+        
+        NetworkService.shared.requestBreweryData { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let breweryArray):
+                    breweries = breweryArray
+                case .failure(let error):
+                    print(error)
+                    print("Problem with loading breweries")
+                }
+                
+                dispatchGroup.leave()
+            }
+        }
+        
+        
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            guard let self = self else {return}
+            print("All requests completed")
+            print("Data loaded from \(NetworkConfiguration.apiUrl)")
+            
+            self.calendarModel = CalendarModel(beerData: beers, breweriesData: breweries)
+            self.getBeersOnMonth()
+            
+            self.activityIndicator.stopAnimating()
         }
     }
     
@@ -123,6 +152,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return
         }
         beerOnDateViewController.currentBeer = currentBeerAndDay.beer
+        beerOnDateViewController.currentBrewery = calendarModel?.getBreweryForID(id: currentBeerAndDay.beer?.breweryID ?? 0)
         navigationController?.pushViewController(beerOnDateViewController, animated: true)
     }
     

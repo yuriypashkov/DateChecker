@@ -43,6 +43,33 @@ class NetworkService {
         
     }
     
+    func requestBreweryData(onResult: @escaping (Result<[BreweryData], Error>) -> Void) {
+        let url = URL(string: NetworkConfiguration.apiUrl + "/breweries")!
+        let urlRequest = URLRequest(url: url)
+        
+        let dataTask = urlSession.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data else {
+                onResult(.failure(NetworkError.noData))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode >= 200 && response.statusCode < 400 else {
+                onResult(.failure(NetworkError.failedResponse))
+                return
+            }
+            
+            do {
+                let beerInfoResponse = try JSONDecoder().decode([BreweryData].self, from: data)
+                onResult(.success(beerInfoResponse))
+            }
+            catch {
+                onResult(.failure(NetworkError.decodingError))
+            }
+        }
+        
+        dataTask.resume()
+    }
+    
 }
 
 enum NetworkError: Error {

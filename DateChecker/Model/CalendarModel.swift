@@ -10,11 +10,13 @@ import Foundation
 class CalendarModel {
     
     var beers: [BeerData] = []
+    var breweries: [BreweryData] = []
     //let months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
     let months = ["Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
     
-    init(beerData: [BeerData]) {
+    init(beerData: [BeerData], breweriesData: [BreweryData]) {
         beers = beerData
+        breweries = breweriesData
     }
     
     func getBeersForMonth() -> [(String, [DayAndBeer])] {
@@ -34,6 +36,15 @@ class CalendarModel {
         }
         
         return result
+    }
+    
+    func getBreweryForID(id: Int) -> BreweryData? {
+        for brewery in breweries {
+            if brewery.id == id {
+                return brewery
+            }
+        }
+        return nil
     }
     
     private func getDaysInMonth(month: String) -> Int { // без високосных годов

@@ -22,6 +22,8 @@
 		216F608926FFB7A500F4E2D0 /* BeerOnDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216F608826FFB7A500F4E2D0 /* BeerOnDateViewController.swift */; };
 		216F608B26FFB98D00F4E2D0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216F608A26FFB98D00F4E2D0 /* Utils.swift */; };
 		216F608D26FFC2C300F4E2D0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216F608C26FFC2C300F4E2D0 /* InfoViewController.swift */; };
+		21BAA96E270C5DD5005B597C /* BreweryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BAA96D270C5DD5005B597C /* BreweryData.swift */; };
+		21BAA970270CB9C9005B597C /* ColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BAA96F270CB9C9005B597C /* ColorService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		216F608826FFB7A500F4E2D0 /* BeerOnDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerOnDateViewController.swift; sourceTree = "<group>"; };
 		216F608A26FFB98D00F4E2D0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		216F608C26FFC2C300F4E2D0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		21BAA96D270C5DD5005B597C /* BreweryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryData.swift; sourceTree = "<group>"; };
+		21BAA96F270CB9C9005B597C /* ColorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 				2128727F26F3C4D100B95229 /* SceneDelegate.swift */,
 				2128728826F3C4D500B95229 /* LaunchScreen.storyboard */,
 				216F608A26FFB98D00F4E2D0 /* Utils.swift */,
+				21BAA96F270CB9C9005B597C /* ColorService.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			children = (
 				2128729926F3C6E300B95229 /* BeerData.swift */,
 				2128729B26F3CB8E00B95229 /* CalendarModel.swift */,
+				21BAA96D270C5DD5005B597C /* BreweryData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,10 +218,12 @@
 				216F608626F4D84700F4E2D0 /* DateCell.swift in Sources */,
 				216F608426F4CE4D00F4E2D0 /* SectionHeader.swift in Sources */,
 				216F608B26FFB98D00F4E2D0 /* Utils.swift in Sources */,
+				21BAA96E270C5DD5005B597C /* BreweryData.swift in Sources */,
 				2128727E26F3C4D100B95229 /* AppDelegate.swift in Sources */,
 				2128728026F3C4D100B95229 /* SceneDelegate.swift in Sources */,
 				216F608D26FFC2C300F4E2D0 /* InfoViewController.swift in Sources */,
 				2128729626F3C60A00B95229 /* NetworkConfiguration.swift in Sources */,
+				21BAA970270CB9C9005B597C /* ColorService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
