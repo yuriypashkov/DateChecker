@@ -68,6 +68,11 @@ class BeerOnDateViewController: UIViewController {
             beerTypeLabel.text! += " · none IBU"
         }
         
+//        let backgroundQueue = DispatchQueue.global(qos: .background)
+//        backgroundQueue.async {
+//            print("SOME TEXT")
+//        }
+        
     }
     
     private func setUI() {
