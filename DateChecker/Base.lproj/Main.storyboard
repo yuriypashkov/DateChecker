@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-908" y="65"/>
         </scene>
-        <!--2021-->
+        <!--2022-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="DateChecker" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,7 +104,7 @@
                             <constraint firstItem="U6A-Nj-BAt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ULK-IT-8c3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="2021" id="ImZ-BO-MPK"/>
+                    <navigationItem key="navigationItem" title="2022" id="ImZ-BO-MPK"/>
                     <connections>
                         <outlet property="collectionView" destination="U6A-Nj-BAt" id="Hza-e4-4Zp"/>
                     </connections>

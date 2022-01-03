@@ -11,8 +11,8 @@ class CalendarModel {
     
     var beers: [BeerData] = []
     var breweries: [BreweryData] = []
-    //let months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
-    let months = ["Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+    let months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+    //let months = ["Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
     
     init(beerData: [BeerData], breweriesData: [BreweryData]) {
         beers = beerData
@@ -68,13 +68,13 @@ class CalendarModel {
             if months[i] == month {
                 
                 // для 12 месяцев
-                //intMonth = i + 1
+                intMonth = i + 1
                 
                 // для 2021-го года начиная с сентября
-                intMonth = i + 9
+                //intMonth = i + 9
             }
         }
-        let date = "\(day).\(intMonth).2021" // формируем даты для 2021-го года, дальше руками поменять на 2022
+        let date = "\(day).\(intMonth).2022" // формируем даты для 2021-го года, дальше руками поменять на 2022
         if let beer = getBeerForStringDate(date: date) {
             return beer
         }
